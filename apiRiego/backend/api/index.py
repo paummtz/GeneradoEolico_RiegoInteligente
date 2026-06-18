@@ -1,6 +1,7 @@
-# api/index.py
-# Importamos la variable 'app' desde tu archivo original
-from Directions import app
+import sys
+import os
 
-# Vercel necesita que el objeto 'app' esté expuesto aquí.
-# Al importar 'app', ya tienes todas tus rutas configuradas.
+# Agregamos el directorio padre al path para que pueda encontrar 'Directions'
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from Directions import app
