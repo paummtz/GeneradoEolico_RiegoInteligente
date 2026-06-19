@@ -7,6 +7,15 @@ import backend.GlobalInfo.ResponseMessages as ResponseMessage
 app = Flask(__name__)
 CORS(app, resources={r"/*":{"origins":"*"}})
 
+# backend/Directions.py
+@app.route('/test')
+def test_route():
+    return {
+        "status": "success",
+        "message": "¡La API de Riego Inteligente está viva y funcionando!",
+        "desplegado_en": "Vercel"
+    }
+
 @app.route("/mensaje", methods= ['GET'])
 @cross_origin(allow_headers=['Content_Type'])
 def mensaje():
